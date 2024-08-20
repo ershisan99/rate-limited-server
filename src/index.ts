@@ -9,7 +9,7 @@ const app = new Elysia()
     .use(rateLimit({
         max: 2
     }))
-
+    .get("/", () => "Hello Elysia")
     .post("/", async ({body}) => {
         const response = await fetch(url, {
             method: "POST",
